@@ -18,5 +18,8 @@ import refs from './js/refs';
 import { submitForm } from './js/submitForm';
 import { renderNotes } from './js/renderNotes';
 import localStorageApi from './js/localStorageApi';
+import { deleteNote } from './js/deleteNote';
 renderNotes(localStorageApi.getNotes());
+
 refs.form.addEventListener('submit', submitForm);
+refs.taskList.addEventListener('click', deleteNote);
