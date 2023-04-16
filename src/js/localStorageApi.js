@@ -1,6 +1,9 @@
 const STORAGE_KEY = 'notesData';
 
 function addNote(obj) {
+  if (obj.taskName === '' || obj.taskText === '') {
+    return;
+  }
   const notes = getNotes();
   notes.push(obj);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
